@@ -1,0 +1,16 @@
+{
+  "name": "simple-ursys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node @run.mjs",
+    "cache-clean" : "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ursys": "https://dsriseah.com/_tarballs/ursys-0.0.1.tgz"
+  }
+}
