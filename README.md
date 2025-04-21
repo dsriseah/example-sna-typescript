@@ -187,7 +187,7 @@ const LOG = console.log.bind(console);
 ```
 If the AppServer is still running in the terminal, stop it with `CTRL-C` then re-run `npm run dev`. 
 
-While you won't see any visible differences in the browser, there are several new features enabled:
+While you won't see any visible differences in the browser, there are several new features enabled that leave crumbs in browser's javascript console:
 
 - **Live reload** is now active. If you change the source code in the `index.html` or `app.ts` files, you should see the browser automatically refresh, which saves time iterating through code changes. If you add a _new_ file, though, you'll have stop/restart the AppServer as you did above.
 - The **Javascript console** now is emitting prettified log messages. You'll also see the message "Starting App" appear next to a colored tag that reads "App". This is an URSYS feature that is used both on server-side and client-side code to help differentiate important module messages from each other.
