@@ -2,13 +2,13 @@ This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of
 
 # How to Install and Run the Example Project
 
-1. Make sure you have nodejs version 18.18.2 or higher installed (terminal commmand: `node --version`)
+1. Make sure you have nodejs version 18.18.2 or higher installed (terminal commmand: `node --version`) on a unix-like operating system.
 2. Open a terminal and cd to a directory where you want to clone the repo
 3. `git clone https://github.com/dsriseah/example-sna-nodejs.git`
 4. `cd example-sna-nodejs`
 5. `npm i`
 6. `npm run dev`
-7. open web browser
+7. open web browser and browse to `http://localhost:8080`
 
 For more insight into what's happening, read the next section.
 
