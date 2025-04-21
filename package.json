@@ -11,6 +11,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ursys": "https://dsriseah.com/_tarballs/ursys-0.0.1.tgz"
+    "ursys": "dsriseah/ursys#main"
   }
 }
