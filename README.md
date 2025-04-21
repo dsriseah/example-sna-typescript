@@ -67,7 +67,7 @@ await SNA.Build(sna_project_dir);
 ```
 
 Next, add an npm script to run the AppServer by adding a **dev** script to `package.json`:
-```json
+```
   ...
   "scripts": {
     "dev": "node @run.mjs"
