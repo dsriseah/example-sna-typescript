@@ -1,4 +1,4 @@
-This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of-SNA) project template. You can clone it as-is and modify it to create a simple development client-server web application that uses network messages to communicate. This is a terminal-based project.
+This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of-SNA) project template. You can clone it as-is and modify it to create a simple development client-server web application that uses network messages to communicate. 
 
 # How to Install and Run the Example Project
 
