@@ -1,6 +1,18 @@
 This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of-SNA) project template. You can clone it as-is and modify it to create a simple development client-server web application that uses network messages to communicate. This is a terminal-based project.
 
-# How to Make SNA Project from Scratch
+# How to Install and Run the Example Project
+
+1. Make sure you have nodejs version 18.18.2 or higher installed (terminal commmand: `node --version`)
+2. Open a terminal and cd to a directory where you want to clone the repo
+3. `git clone https://github.com/dsriseah/example-sna-nodejs.git`
+4. `cd example-sna-nodejs`
+5. `npm i`
+6. `npm run dev`
+7. open web browser
+
+For more insight into what's happening, read the next section.
+
+# How to Make an SNA Project from Scratch
 
 ### Assumptions
 
