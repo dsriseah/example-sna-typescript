@@ -1,15 +1,19 @@
 This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of-SNA) project template. You can clone it as-is and modify it to create a simple development client-server web application that uses network messages to communicate. This is a terminal-based project.
 
-## Instructions for creating minimal project from scratch
+# How to Make SNA Project from Scratch
 
 ### Assumptions
 
 At minimum, you'll need **git** installed on your system in a unix-like environment like Linux, MacOS, or Windows Linux Subsystem. If `git --version` doesn't work or reports a version less than 2.1.x, look up how to install it on your particular system. And of course you'll need a version of **nodejs** installed of version `18.x.x` or higher.
 
+<details><summary>Optional Tools</summary>
+
 While this example doesn't require anything else than git and node, I use the following tools for URSYS development:
 - **Visual Studio Code** (VSCODE) with special environment detection scripts (not in SNA, but part of the parent URSYS framework)
 - **Node Version Manager** (NVM) is used to manage different versions of nodejs per-folder, which simplifies managing multiple projects that use different versions of the node engine.
 - **Chrome** browser is the testing target, particularly in the Javascript console output.
+
+</details>
 
 ### 1. Create a new git repo
 From the terminal, create a directory and initialize its basic git and package initialization.
@@ -18,13 +22,12 @@ mkdir simple-ursys
 npm init -y
 git init
 ```
-Next, install the ursys tarball from its current hosted location
+Next, install the ursys tarball from its current hosted location. SNA is part of URSYS!
 ```
 npm install https://dsriseah.com/_tarballs/ursys-0.0.1.tgz
 ```
 
-<details>
-<summary>alternate installation</summary>
+<details><summary>Alternate URSYS Install Methods</summary>
 Alternatively, you could download the tarball someewhere and do a file-based installed:
 ```
 npm install file:./path/to/downloaded/ursys-0.0.1.tgz
@@ -135,18 +138,30 @@ Create the `favicon.svg` file in the `app-static` directory
 <rect x="30" y="30" width="40" height="40" fill="orange" />
 </svg>
 ```
+This is a graphic description language, drawing an orange square with a translucent stroke around it that appears as the icon in the brower tab. If you already have a `favicon.ico` you like, copy it to the `app-static` directory. Then, modify the HTML to load it (as this one has a different extension of `.svg`).
 
 ### 5d. Restart the AppServer
 
-If the AppServer is still running 
+If the AppServer is still running in the terminal, stop it with `CTRL-C` and rerun the command:
+```
+npm run dev
+```
+With luck, you should see an updated web page!
 
-### ADD APP ENTRY POINT
+### 6. Concept: Application Entry Points
 
-Top-level files in `app-source` directory are "entry points"
-- files ending with `.ts` are web bundle entry points for typescript
-- files ending with `.mts` are server entry points
+An "entry point" is the starting javascript file that is used to create a "bundle" that can be loaded into the browser. In the above HTML index file, there is a `<script>` tag that refers to `js/bundle.js`. This file is created by the SNA AppBuilder which uses **esbuild** to create the bundle from the entry point and any of the modules it imports.
 
-create `app-source/app.ts` 
+The AppBuilder scans the **app-source** directory to find entry points, using the following convention:
+- files ending with `.ts` are **web bundle entry points** 
+- files ending with `.mts` are **server modules** that are dynamically loaded to provide additional services
+Only the top-level files are scanned; if you put a file in a subdirectory it will not be processed by the SNA AppBuilder. This is a good way to hide supporting library files.
+
+SNA uses **typescript** files as its input. If you're not familiar with Typescript, you can write regular Javascript code and it should work just fine. As Typescript configuration for a framework varies considerably from environment to environment, that will be handled in a different example than this one.
+
+### 6a. Create an application entry point
+
+We will create a single entry point called **app.ts**, which will go into the `app-source` directory:
 ```ts
 import { ConsoleStyler, SNA } from 'ursys/client';
 
@@ -158,5 +173,15 @@ const LOG = console.log.bind(console);
   await SNA.Start();
 })();
 ```
-Quit and restart the appserver with `CTRL-C` then `npm run dev` then look at the browser.
-Open the javsascript console and you'll see the 'starting app' message.
+If the AppServer is still running in the terminal, stop it with `CTRL-C` then re-run `npm run dev`. 
+
+While you won't see any visible differences in the browser, there are several new features enabled:
+
+- **Live reload** is now active. If you change the source code in the `index.html` or `app.ts` files, you should see the browser automatically refresh, which saves time iterating through code changes. If you add a _new_ file, though, you'll have stop/restart the AppServer as you did above.
+- The **Javascript console** now is emitting prettified log messages. You'll also see the message "Starting App" appear next to a colored tag that reads "App". This is an URSYS feature that is used both on server-side and client-side code to help differentiate important module messages from each other.
+- **Networking** is now enabled. If you like at the nodejs terminal output, you'll see a message like `URSERVE UR_001 client connected`. It's possible for clients to send messages to each other, defined through the SNA API through methods like `AddMessaageHandler()` 
+- **App Lifecycle Hooks** are now enabled. The browser console shows a message `sna.hook SNA AppLifecycle is starting`, which provides a way to carefully stage operations so that groups of functions finish one-after-the-other in an orderly fashion. This is also provided through the SNA API through methods like `HookAppPhase()`. 
+
+# Next Steps
+
+This is the barest minimum boilerplate for SNA and is a work in progress. Examples describing how Networking and Lifecycle Hooks are used will be provided as separate repos.
