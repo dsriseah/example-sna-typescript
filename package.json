@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "node @run.mjs",
-    "cache-clean" : "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json"
+    "force-clean" : "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ursys": "dsriseah/ursys#main"
+    "ursys": "dsriseah/ursys#2025-0422"
   }
 }
