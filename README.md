@@ -8,7 +8,7 @@ This is a minimal [URSYS/SNA](https://github.com/dsriseah/ursys/wiki/Overview-of
 4. `cd example-sna-nodejs`
 5. `npm i`
 6. `npm run dev`
-7. open web browser and browse to `http://localhost:8080`
+7. open web browser and browse to `http://localhost:3030`
 
 For more insight into what's happening, read the next section.
 
@@ -75,7 +75,7 @@ const sna_project_dir = PATH.dirname(process.argv[1]);
 LOG('SNA Appserver Starting');
 const app_dir = sna_project_dir;
 SNA.SetServerConfig({ app_dir });
-await SNA.Build(sna_project_dir);
+await SNA.Build(sna_project_dir, { port:3030 });
 ```
 
 Next, add an npm script to run the AppServer by adding a **dev** script to `package.json`:
@@ -93,7 +93,8 @@ Back in the terminal, use the script we've just defined to start the AppServer
 npm run dev 
 ```
 You'll see information appear in the terminal, including the **url** that you can
-enter into a browser like Chrome. Do that now. By default the URL is `localhost:8080` or similar.
+enter into a browser like Chrome. Do that now. By default the URL is `localhost:3030` or similar.
+You can change 
 
 You'll notice that there isn't much happening because we haven't added any HTML or custom application scripts yet. We'll do that next.
 
@@ -169,7 +170,10 @@ The AppBuilder scans the **app-source** directory to find entry points, using th
 - files ending with `.mts` are **server modules** that are dynamically loaded to provide additional services
 Only the top-level files are scanned; if you put a file in a subdirectory it will not be processed by the SNA AppBuilder. This is a good way to hide supporting library files.
 
-SNA uses **typescript** files as its input. If you're not familiar with Typescript, you can write regular Javascript code and it should work just fine. As Typescript configuration for a framework varies considerably from environment to environment, that will be handled in a different example than this one.
+SNA uses **typescript** files as its input. If you're not familiar with Typescript, you can write regular Javascript code and it should work just fine. 
+
+> [!NOTE] 
+> As Typescript configuration for a framework is a pain in the ass, that configuration is handled in the repo [example-sna-tsx](github.com/dsriseah/example-sna-tsx).
 
 ### 6a. Create an application entry point
 
