@@ -1,10 +1,9 @@
 {
-  "name": "example-sna-nodejs",
+  "name": "example-sna-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "node @run.mjs",
+    "dev": "npx tsx @run.mts",
     "fetch-upstream": "git fetch upstream && git merge upstream/main",
     "force-clean": "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json"
   },
@@ -13,5 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "ursys": "dsriseah/ursys#2025-0422"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
   }
 }
