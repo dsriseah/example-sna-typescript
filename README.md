@@ -172,7 +172,7 @@ The AppBuilder scans the **app-source** directory to find entry points, using th
 Only the top-level files are scanned; if you put a file in a subdirectory it will not be processed by the SNA AppBuilder. This is a good way to hide supporting library files.
 
 > [!NOTE]
-> Server modules are not supported in this repo. See the repo [example-sna-tsx](github.com/dsriseah/example-sna-tsx) for support. This repo is for vanilla JS.
+> Server modules are not supported in this repo. See the repo [example-sna-tsx](github.com/dsriseah/example-sna-tsx) for that feature.
 
 SNA uses **typescript** files as its input. If you're not familiar with Typescript, you can write regular Javascript code and it should work just fine. 
 
