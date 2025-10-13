@@ -1,29 +1,6 @@
-# How to Install and Run the Example Project
-
-1. Make sure you have nodejs version 18.18.2 or higher installed (terminal commmand: `node --version`) on a unix-like operating system.
-2. Open a terminal and cd to a directory where you want to clone the repo
-3. `git clone https://github.com/dsriseah/example-sna-nodejs.git`
-4. `cd example-sna-nodejs`
-5. `npm i`
-6. `npm run dev`
-7. open web browser and browse to `http://localhost:3030`
-
-For more insight into what's happening, read the next section.
-
-# How to Make an SNA Project from Scratch
-
-You can just clone the `https://github.com/dsriseah/example-sna-nodejs` repo. 
+# Requirements
 
 At minimum, you'll need **git** installed on your system in a unix-like environment like Linux, MacOS, or Windows Linux Subsystem. If `git --version` doesn't work or reports a version less than 2.1.x, look up how to install it on your particular system. And of course you'll need a version of **nodejs** installed of version `18.x.x` or higher. 
-
-Quick instructions in the terminal
-```
-git clone https://github.com/dsriseah/example-sna-nodejs.git my-repo
-cd my-repo
-npm ci
-npm run dev
-```
-Then browse to the address shown in the terminal output.
 
 <details><summary>Optional Tools</summary>
 
@@ -34,9 +11,21 @@ While this example doesn't require anything else than git and node, I use the fo
 
 </details>
 
+# Quick Installation
 
+1. Make sure you have nodejs version 18.18.2 or higher installed (terminal commmand: `node --version`) on a unix-like operating system.
+2. Open a terminal and cd to a directory where you want to clone the repo
+3. `git clone https://github.com/dsriseah/example-sna-nodejs.git my-sna-repo`
+4. `cd my-sna-repo`
+5. `npm ci`
+6. `npm run dev`
+7. open web browser and browse to `http://localhost:3030`
 
-# Manual Steps
+For more insight into what's happening, read the next section.
+
+# Manual SNA Installation
+
+If you want to try integrating SNA into your own code, these instructions are for you.
 
 ### 1. Create a new git repo
 From the terminal, create a directory and initialize its basic git and package initialization.
