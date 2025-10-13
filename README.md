@@ -167,8 +167,12 @@ An "entry point" is the starting javascript file that is used to create a "bundl
 
 The AppBuilder scans the **app-source** directory to find entry points, using the following convention:
 - files ending with `.ts` are **web bundle entry points** 
-- files ending with `.mts` are **server modules** that are dynamically loaded to provide additional services
+- files ending with `.mts` are **server modules** that are dynamically loaded to provide additional services 
+
 Only the top-level files are scanned; if you put a file in a subdirectory it will not be processed by the SNA AppBuilder. This is a good way to hide supporting library files.
+
+> [!NOTE]
+> Server modules are not supported in this repo. See the repo [example-sna-tsx](github.com/dsriseah/example-sna-tsx) for support. This repo is for vanilla JS.
 
 SNA uses **typescript** files as its input. If you're not familiar with Typescript, you can write regular Javascript code and it should work just fine. 
 
