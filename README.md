@@ -14,5 +14,7 @@ Both versions import the URSYS library as a tagged release.
 
 # How to Make an SNA Project from Scratch
 
-See [README-JS](README-JS).
+See either of the following
+- [README-JS.md](https://github.com/dsriseah/example-sna-nodejs/blob/main/README-JS.md)
+- [README-TS.md](https://github.com/dsriseah/example-sna-typescript/blob/main/README-TS.md)
 
