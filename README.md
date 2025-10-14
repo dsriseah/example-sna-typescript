@@ -5,7 +5,6 @@ There are currently two examples available that are designed to work with Visual
 - [Typescript](https://github.com/dsriseah/example-sna-typescript) version
 
 The difference is that the Typescript version can support dynamically-loaded server-side Typescript modules, whereas the NodeJS version only allows loading CommonJS.
-Typescript configuration is not straightforward.
 
 Both versions import the URSYS library as a tagged release. 
 
