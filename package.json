@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "npx tsx @run.mts",
     "fetch-upstream": "git fetch upstream && git merge upstream/main",
-    "force-clean": "npm cache clean --force && rm -rf node_modules && rm -rf package-lock.json"
+    "force-clean": "npm cache clean --force && rm -rf node_modules package-lock.json && rm -rf ~/.npm/_cacache"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ursys": "dsriseah/ursys#2025-0422"
+    "ursys": "dsriseah/ursys#00f1657"
   },
   "devDependencies": {
     "tsx": "^4.20.6"
